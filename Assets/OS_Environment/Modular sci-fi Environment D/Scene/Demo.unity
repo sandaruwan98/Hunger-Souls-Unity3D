@@ -24707,6 +24707,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5940596863171012648, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 499aa1d169a937445b2400a473020094, type: 3}
 --- !u!4 &828577103 stripped
@@ -30749,7 +30754,7 @@ PrefabInstance:
     - target: {fileID: 6137936355812205907, guid: fc21a95e0fd665946991964813a7d3a8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137936355812205905, guid: fc21a95e0fd665946991964813a7d3a8,
         type: 3}
