@@ -4,6 +4,25 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+
+Assets/ADG_Textures/
+Assets/FPS Kit By (HDGameP)/
+Assets/Flooded_Grounds/
+Assets/MF Pack/
+Assets/New Terrain.asset
+Assets/New Terrain.asset.meta
+Assets/Standard Assets/
+Assets/TextMesh Pro/
+Assets/weapons/
+Assets/mat/
+Assets/Scenes/other/
+Assets/Scenes/Scene_A_Terrain.asset
+Assets/Scenes/Scene_A_Terrain.asset.meta
+Assets/SampleScenes/
+
+Assets/OS_Environment/Modular sci-fi Environment D/Art/Mesh/Materials/
+
+
 #Assets/
 # Visual Studio cache directory
 .vs/
