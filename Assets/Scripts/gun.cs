@@ -127,7 +127,7 @@ public class gun : MonoBehaviour
     void shoot()
     {
         RaycastHit hit;
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+        if(Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
             
             Target target = hit.transform.GetComponent<Target>();
@@ -135,41 +135,24 @@ public class gun : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(bulletdamage);
-               // target.animator.SetBool("hit", true);//-----------------------------------------------------
-               
-            //    target.animator.SetBool("hit", false);
+               // target.animator.SetBool("hit", true);
             }
             
-            impactPLAY("ENEMY",Bloodimpact);
-            impactPLAY("head", Bloodimpact);
-            impactPLAY("terrain",Dirtimpact);
-            impactPLAY("water", waterimpact);
-            impactPLAY("wood", woodimpact);
-            impactPLAY("glass", glassimpact);
+            impactPLAY("ENEMY",Bloodimpact);           
             impactPLAY("concrete", concreteimpact);
             impactPLAY("metal", metalimpact);
-            impactPLAY("rock", rockimpact);
-
+          
             void impactPLAY(string tag, GameObject obj)
             {
                 if (hit.transform.tag == tag)
                 {
                     GameObject imapact = Instantiate(obj, hit.point, Quaternion.LookRotation(hit.normal));
                     Destroy(imapact,5f);
-
-
                 }
             }
-
-            
-            //if (hit.rigidbody != null)
-            //{
-            //    hit.rigidbody.AddForce(-hit.normal * force);
-            //}
         }
-
-    } // end of shoot --------------------------------------------------------------
-
+    } 
+   
     void DisplayBulletCount()
     {
         tmBullet.text = bullets.ToString();
@@ -179,11 +162,8 @@ public class gun : MonoBehaviour
 
     }
 
-    
     void runAnimation()
     {
-        
-
         if (Input.GetButtonUp("run"))
         {
             animator.SetBool("run", false);
