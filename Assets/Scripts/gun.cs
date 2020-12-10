@@ -88,8 +88,8 @@ public class gun : MonoBehaviour
             if(bullets > 0 && totalBullts>0)
             {
                 anim["fire"].speed = FireSpeed;
-                anim.CrossFade("fire");
-              
+                //anim.CrossFade("fire");
+                anim.Play("fire");
                 MfPlay();
                 shoot();
             }
