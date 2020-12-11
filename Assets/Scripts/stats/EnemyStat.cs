@@ -25,17 +25,18 @@ public class EnemyStat : CharactorStat
     {
         base.TakeDamage(damage);
         //hit animation
-
+        anim.SetInteger("scream", Random.Range(0, 10));
     }
 
     public override void Die()
     {
         base.Die();
         //play die anim
-        anim.SetInteger("die", 1);
-        //Destroy
         Destroy(con);
         Destroy(col);
+        anim.SetInteger("die", 1);
+        //Destroy
+        
         //Destroy(this.gameObject, 5f);
     }
 }
