@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class gun : MonoBehaviour
 {
-    public float bulletdamage = 15f;
+    public int bulletdamage = 10;
     public float range = 100f;
   
     public float FireRate = 2f;
@@ -66,7 +66,7 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StabEnemyCheck();
+        //StabEnemyCheck();
         if (x > 0)
         {
             x--;
@@ -130,11 +130,12 @@ public class gun : MonoBehaviour
         if(Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
             
-            Target target = hit.transform.GetComponent<Target>();
+            EnemyStat zombie = hit.transform.GetComponent<EnemyStat>();
 
-            if (target != null)
+            if (zombie != null)
             {
-                target.TakeDamage(bulletdamage);
+                
+                zombie.TakeDamage(bulletdamage);
                // target.animator.SetBool("hit", true);
             }
             
