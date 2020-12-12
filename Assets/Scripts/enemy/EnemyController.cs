@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         myStat = GetComponent<CharactorStat>();
         target = PlayerManger.instance.player.transform;
+        playerStat = target.GetComponent<PlayerStat>();
     }
 
     // Update is called once per frame
@@ -30,14 +31,14 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
         attackcooldown -= Time.deltaTime;
-        anim.SetFloat("attack", attackcooldown);
+        float speed = agent.velocity.magnitude / agent.speed;
+        anim.SetFloat("speed", speed);
+
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-            float speed = agent.velocity.magnitude / agent.speed;
-            //anim.SetBool("attack", false);
-            anim.SetFloat("speed", speed);
-
+            
+            anim.SetFloat("attack", attackcooldown);
             if (distance <= agent.stoppingDistance+0.1f)
             {
 
@@ -54,6 +55,7 @@ public class EnemyController : MonoBehaviour
                 
             }
         }
+       
     }
 
     private void attack()

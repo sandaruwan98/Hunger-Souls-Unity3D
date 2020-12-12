@@ -42,6 +42,7 @@ public class gun : MonoBehaviour
     public int reloadtime = 150;
     public int bcount = 10;
     public int totalBullts = 150;
+
     private float nextTimetofire = 0f;
     private float nextTimetofireSound = 0f;
     private int x;
