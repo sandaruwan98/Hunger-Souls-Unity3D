@@ -5,15 +5,14 @@ using TMPro;
 
 public class PlayerStat : CharactorStat
 {
-    public RectTransform healthbar;
-    public TextMeshProUGUI healthtext;
-    public int healthbarMaxLen;
-    int healthbarLen;
+    public Healthbar healthbar;
+   
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        healthbarLen = healthbarMaxLen;
+        healthbar.SetMaxHealth(maxhealth);
     }
 
     // Update is called once per frame
@@ -26,13 +25,11 @@ public class PlayerStat : CharactorStat
     {
         base.TakeDamage(damage);
         // show blood ui to show you have hit 
-        
-        
-        //show health bar
-        healthbarLen = (currenthealth / maxhealth) * healthbarMaxLen;
 
-        //healthbar.rect.Set(width: healthbarLen);
-         healthtext.text = currenthealth.ToString();
+
+
+        //healthbar
+        healthbar.SetHealth(currenthealth);
     }
 
     public override void Die()

@@ -123,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb4cb3da7423e41a88e4b8e4c73702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 100
+  maxhealth: 50
   currenthealth: 0
   damage:
-    basevalue: 25
+    basevalue: 10
 --- !u!1001 &7056627043869345483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +134,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7056627043461716301}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
+      propertyPath: m_Name
+      value: zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
+      propertyPath: m_TagString
+      value: ENEMY
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00013733
@@ -189,14 +197,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2572074
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
-      propertyPath: m_Name
-      value: zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
-      propertyPath: m_TagString
-      value: ENEMY
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 0193e083069628a4f8da746478358bf6, type: 3}
       propertyPath: m_Controller
