@@ -25660,6 +25660,11 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 3702429505806452912}
+    - target: {fileID: 241932357364212989, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: reloadtime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8024309438541437988, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -25670,6 +25675,11 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 3702429505806452912}
+    - target: {fileID: 9030874510227702801, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: reloadtime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4675437453156336340, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -25680,6 +25690,11 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 3702429505806452912}
+    - target: {fileID: 7479344185786262560, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: reloadtime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2031446091784070228, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -25709,6 +25724,11 @@ PrefabInstance:
         type: 3}
       propertyPath: FireRate
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045840849760034338, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: reloadtime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3821482514272314100, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
