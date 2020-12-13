@@ -35,7 +35,7 @@ public class PlayerStat : CharactorStat
     public override void Die()
     {
         base.Die();
-        Debug.Log("Player died");
+        //Debug.Log("Player died");
         //animation 
         // display lost game
         // restrat or goto menu

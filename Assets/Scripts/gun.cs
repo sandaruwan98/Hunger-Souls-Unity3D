@@ -135,8 +135,18 @@ public class gun : MonoBehaviour
 
             if (zombie != null)
             {
+                //check if headshot or not
+                if(hit.collider is BoxCollider)
+                {
+                    //if headshot die immediate
+                    zombie.Die();
+                }
+                else
+                {
+                    zombie.TakeDamage(bulletdamage);
+                }
+
                 
-                zombie.TakeDamage(bulletdamage);
                // target.animator.SetBool("hit", true);
             }
             

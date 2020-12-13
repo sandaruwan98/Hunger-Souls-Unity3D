@@ -33,7 +33,8 @@ public class EnemyStat : CharactorStat
     {
         base.Die();
         //play die anim
-        anim.SetInteger("die", 1);
+        
+        anim.SetInteger("die", Random.Range(1,3));
         transform.DetachChildren();
        
         Destroy(transform.gameObject);
