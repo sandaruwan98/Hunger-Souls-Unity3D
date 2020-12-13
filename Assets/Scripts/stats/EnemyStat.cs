@@ -7,6 +7,7 @@ public class EnemyStat : CharactorStat
     Animator anim;
     EnemyController con;
     CapsuleCollider col;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +26,21 @@ public class EnemyStat : CharactorStat
     {
         base.TakeDamage(damage);
         //hit animation
-
+        //anim.SetInteger("scream", Random.Range(0, 10));
     }
 
     public override void Die()
     {
         base.Die();
         //play die anim
-        anim.SetInteger("die", 1);
+        
+        anim.SetInteger("die", Random.Range(1,3));
+        transform.DetachChildren();
+       
+        Destroy(transform.gameObject);
+        
         //Destroy
-        Destroy(con);
-        Destroy(col);
+        
         //Destroy(this.gameObject, 5f);
     }
 }

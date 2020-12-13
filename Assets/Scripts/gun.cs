@@ -39,12 +39,13 @@ public class gun : MonoBehaviour
 
 
     private int bullets;
-    public int reloadtime = 150;
+    public float reloadtime = 3;
     public int bcount = 10;
     public int totalBullts = 150;
+
     private float nextTimetofire = 0f;
     private float nextTimetofireSound = 0f;
-    private int x;
+    public float reloadCooldown;
     private bool run = false;
     private bool shootcheck = false;
     
@@ -55,7 +56,7 @@ public class gun : MonoBehaviour
     void Start()
     {
         bullets = bcount;
-        x = 0;
+        reloadCooldown = 0f;
     }
 
     private void OnDisable()
@@ -66,12 +67,12 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StabEnemyCheck();
-        if (x > 0)
+        
+        if (reloadCooldown > 0)
         {
-            x--;
+            reloadCooldown-=Time.deltaTime;
         }
-        shootcheck = Input.GetButton("Fire1") && x <= 0 && (!run);
+        shootcheck = Input.GetButton("Fire1") && reloadCooldown <= 0f && (!run);
 
         if (shootcheck && Time.time >= nextTimetofireSound  && bullets > 0 && totalBullts > 0)// shoot sound
         {
@@ -95,7 +96,7 @@ public class gun : MonoBehaviour
             }
             else
             {
-                x = reloadtime;
+                reloadCooldown = reloadtime;
                 totalBullts -= (bcount - bullets);
                 if(totalBullts > bcount)
                 {
@@ -134,8 +135,18 @@ public class gun : MonoBehaviour
 
             if (zombie != null)
             {
+                //check if headshot or not
+                if(hit.collider is BoxCollider)
+                {
+                    //if headshot die immediate
+                    zombie.Die();
+                }
+                else
+                {
+                    zombie.TakeDamage(bulletdamage);
+                }
+
                 
-                zombie.TakeDamage(bulletdamage);
                // target.animator.SetBool("hit", true);
             }
             
@@ -217,7 +228,7 @@ public class gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            x = reloadtime;
+            reloadCooldown = reloadtime;
             totalBullts -= (bcount - bullets);
             if (totalBullts > bcount)
             {

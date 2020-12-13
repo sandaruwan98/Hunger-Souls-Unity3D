@@ -30,6 +30,6 @@ public class CharactorStat : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log("Died");
+        //Debug.Log("Died");
     }
 }

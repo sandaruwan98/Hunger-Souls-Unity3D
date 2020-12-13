@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7056627043461716302}
   - component: {fileID: 7056627043461716303}
   - component: {fileID: 7056627043461716288}
+  - component: {fileID: 2443359922108905176}
   - component: {fileID: 7056627043461716289}
   - component: {fileID: 7056627043461716290}
   - component: {fileID: 7056627043461716300}
@@ -29,14 +30,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7056627043461716291}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.000000029802322}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: -47.326, y: 0.04, z: -19.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7056627043868957771}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!33 &7056627043461716302
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56,9 +57,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3
-  m_Acceleration: 1
+  m_Acceleration: 3
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -77,10 +78,23 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.29
+  m_Height: 1.55
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!65 &2443359922108905176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056627043461716291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.52, z: 0.36}
+  m_Center: {x: 0, y: 1.75, z: 0}
 --- !u!54 &7056627043461716289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
+  attackSpeed: 0.5
 --- !u!114 &7056627043461716300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,10 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb4cb3da7423e41a88e4b8e4c73702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 100
+  maxhealth: 50
   currenthealth: 0
   damage:
-    basevalue: 25
+    basevalue: 10
 --- !u!1001 &7056627043869345483
 PrefabInstance:
   m_ObjectHideFlags: 0
