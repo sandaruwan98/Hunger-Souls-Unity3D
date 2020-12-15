@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject MainPanel;
     public GameObject OptionsPanel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public AudioMixer audioMixer;
+    
 
     //for main panel
     public void StartGame()
@@ -36,7 +33,12 @@ public class MainMenu : MonoBehaviour
     //for options
     public void IsFullScreen(bool isFull)
     {
-        
+        Screen.fullScreen = isFull;
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
     }
 
     public void Back()
@@ -44,9 +46,5 @@ public class MainMenu : MonoBehaviour
         OptionsPanel.SetActive(false);
         MainPanel.SetActive(true);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
