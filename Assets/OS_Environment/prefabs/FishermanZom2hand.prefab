@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 2946628222785787675}
   - component: {fileID: 2946628222785787672}
   - component: {fileID: 2946628222785787670}
+  - component: {fileID: 66086948}
+  - component: {fileID: 66086947}
   m_Layer: 0
   m_Name: FishermanZom2hand
   m_TagString: ENEMY
@@ -30,14 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2946628222785787673}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.000000029802322}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: -16.856592, y: 4.6203732, z: 12.786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5134609871062798174}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!33 &2946628222785787668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -60,7 +62,7 @@ NavMeshAgent:
   m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 200
-  m_StoppingDistance: 2
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -141,6 +143,130 @@ MonoBehaviour:
   currenthealth: 0
   damage:
     basevalue: 10
+--- !u!82 &66086948
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946628222785787673}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &66086947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946628222785787673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e716a812db14824ca3d18c5fd61f1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackClips:
+  - {fileID: 8300000, guid: c3788a61bb391ca4d8c24d2ac8c1e917, type: 3}
+  - {fileID: 8300000, guid: 3b93d05246ca75240ad84b44510b1377, type: 3}
+  - {fileID: 8300000, guid: f5c3421b64d522b419574df6277ff39f, type: 3}
+  moveClips:
+  - {fileID: 8300000, guid: aa38a598c1d79b040bdb951fd9d98cbb, type: 3}
+  - {fileID: 8300000, guid: a39c6db478250e14a9cad68fff05b1d0, type: 3}
+  - {fileID: 8300000, guid: d93aae3b995d1c24190f4fe19ed91eed, type: 3}
+  - {fileID: 8300000, guid: 512b743751119644e836ece2f841edb7, type: 3}
+  - {fileID: 8300000, guid: bf752b004ce4f8648bd383e378a74b58, type: 3}
+  dieClips:
+  - {fileID: 8300000, guid: 4d41d58cdfacaa2498ee5ab93e9c7c00, type: 3}
+  - {fileID: 8300000, guid: 8ad66d467e9539f45b3e81ca00cd2acc, type: 3}
+  - {fileID: 8300000, guid: c966f917614fbd74a9a81b312f8cdeb4, type: 3}
+  - {fileID: 8300000, guid: ae1a9abbfa7a70b449d1006349a9dfa0, type: 3}
+  - {fileID: 8300000, guid: 6c43a2ee1deea93409b1b54e43e38d48, type: 3}
 --- !u!1001 &5139105795254631764
 PrefabInstance:
   m_ObjectHideFlags: 0
