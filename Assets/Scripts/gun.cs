@@ -22,7 +22,7 @@ public class gun : MonoBehaviour
     public ParticleSystem dst;
     public ParticleSystem smoke;
 
-    public GameObject Bloodimpact;
+    public BloodEffect BloodEffect;
     public GameObject Dirtimpact;
     public GameObject waterimpact;
     public GameObject woodimpact;
@@ -146,12 +146,12 @@ public class gun : MonoBehaviour
                     zombie.TakeDamage(bulletdamage);
                 }
 
-                
+                BloodEffect.BloodImpact(hit);
                // target.animator.SetBool("hit", true);
             }
             
-            impactPLAY("ENEMY",Bloodimpact);           
-            impactPLAY("concrete", concreteimpact);
+            //impactPLAY("ENEMY",Bloodimpact);           
+           // impactPLAY("concrete", concreteimpact);
             impactPLAY("metal", metalimpact);
           
             void impactPLAY(string tag, GameObject obj)
