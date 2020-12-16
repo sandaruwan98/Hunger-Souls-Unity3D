@@ -14205,13 +14205,11 @@ MonoBehaviour:
   BloodAttach: {fileID: 3136605153214515430, guid: 45eef0a861a8a8946b4c23fb9f4f779a,
     type: 3}
   BloodFX:
-  - {fileID: 2656253210798625995, guid: a78e9ef18b366424b84e0c7410d2fe72, type: 3}
-  - {fileID: 5865290276592450837, guid: 42a28376f729c864a81abf66add7a418, type: 3}
-  - {fileID: 764304066602274965, guid: 4a322f29a9e1fa54f90223de8bcf3a28, type: 3}
-  - {fileID: 7935733108997359171, guid: e822d59151d3597428b0b63bf25355e7, type: 3}
-  - {fileID: 4288107571095694937, guid: c3f8938673a07704e93ac52eee18f410, type: 3}
   - {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
   - {fileID: 4152240900433254336, guid: 6d3629f845b40e24fb51d381e84bbc77, type: 3}
+  - {fileID: 5170585893340993107, guid: 7b88f11816abaa34c9e02cbaa8485321, type: 3}
+  - {fileID: 6463355840203370170, guid: 70ead61ff20b23b4e97b90d8e8997ecd, type: 3}
+  - {fileID: 5494213943435191861, guid: db51fe09adf27d640b4e10018c2d76ba, type: 3}
   direction: {x: 0, y: 0, z: 0}
 --- !u!1001 &498474470
 PrefabInstance:
@@ -26201,6 +26199,11 @@ PrefabInstance:
       propertyPath: reloadtime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9030874510227702801, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: BloodEffect
+      value: 
+      objectReference: {fileID: 496493591}
     - target: {fileID: 4675437453156336340, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -26216,6 +26219,11 @@ PrefabInstance:
       propertyPath: reloadtime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7479344185786262560, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: BloodEffect
+      value: 
+      objectReference: {fileID: 496493591}
     - target: {fileID: 2031446091784070228, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -26251,6 +26259,11 @@ PrefabInstance:
       propertyPath: reloadtime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9045840849760034338, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: BloodEffect
+      value: 
+      objectReference: {fileID: 496493591}
     - target: {fileID: 3821482514272314100, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Color.rgba
@@ -26318,6 +26331,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1,
         type: 2}
+    - target: {fileID: 7348074198731401414, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2707620637996066078, guid: 499aa1d169a937445b2400a473020094,
         type: 3}
       propertyPath: m_Material
@@ -26340,9 +26358,45 @@ PrefabInstance:
       propertyPath: rigidbodyFirstPersonController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2471643488936108936, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: advancedSettings.airControl
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892828777414252366, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721678308749075321, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771965528880864357, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 3702429505806452912}
+    - target: {fileID: 5240512020311910569, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 6fd0461d6917fc74ea6164f32f11bee0, type: 3}
+    - target: {fileID: 5240512020311910569, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 6fd0461d6917fc74ea6164f32f11bee0, type: 3}
+    - target: {fileID: 3176055047462348170, guid: 499aa1d169a937445b2400a473020094,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 399232562041232851, guid: 499aa1d169a937445b2400a473020094, type: 3}
     - {fileID: 3821482514883378681, guid: 499aa1d169a937445b2400a473020094, type: 3}
+    - {fileID: 7348074198731401414, guid: 499aa1d169a937445b2400a473020094, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 499aa1d169a937445b2400a473020094, type: 3}
 --- !u!4 &828577103 stripped
 Transform:
