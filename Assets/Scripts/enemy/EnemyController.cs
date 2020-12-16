@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     CharactorStat myStat;
     NavMeshAgent agent;
     Animator anim;
-
+    EnemySoundManager soundManager;
     public float attackSpeed = 1f;
     private float attackcooldown= 0f;
     // Start is called before the first frame update
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         myStat = GetComponent<CharactorStat>();
+        soundManager = GetComponent<EnemySoundManager>();
         target = PlayerManger.instance.player.transform;
         playerStat = target.GetComponent<PlayerStat>();
     }
@@ -37,7 +38,9 @@ public class EnemyController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-            
+            //play sound 
+            soundManager.PlayMoveSound();
+
             anim.SetFloat("attack", attackcooldown);
             if (distance <= agent.stoppingDistance+0.1f)
             {
@@ -61,6 +64,7 @@ public class EnemyController : MonoBehaviour
     private void attack()
     {
         playerStat.TakeDamage(myStat.damage.GetValue());
+        soundManager.PlayAttackSound();
     }
 
     void FaceTarget()

@@ -7,13 +7,14 @@ public class EnemyStat : CharactorStat
     Animator anim;
     EnemyController con;
     CapsuleCollider col;
-    
+    EnemySoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         con = GetComponent<EnemyController>();
         col = GetComponent<CapsuleCollider>();
+        soundManager = GetComponent<EnemySoundManager>();
     }
 
     // Update is called once per frame
@@ -33,14 +34,11 @@ public class EnemyStat : CharactorStat
     {
         base.Die();
         //play die anim
-        
         anim.SetInteger("die", Random.Range(1,3));
         transform.DetachChildren();
+        //play sound
+        soundManager.PlayDieSound();
+        Destroy(transform.gameObject,3f);
        
-        Destroy(transform.gameObject);
-        
-        //Destroy
-        
-        //Destroy(this.gameObject, 5f);
     }
 }
