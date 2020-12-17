@@ -63,7 +63,6 @@ public class EnemyController : MonoBehaviour
 
     private void attack()
     {
-        Debug.Log("attack");
         playerStat.TakeDamage(myStat.damage.GetValue());
         soundManager.PlayAttackSound();
     }

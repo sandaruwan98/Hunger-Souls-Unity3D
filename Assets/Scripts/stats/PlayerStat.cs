@@ -8,7 +8,7 @@ public class PlayerStat : CharactorStat
 {
     public Healthbar healthbar;
     BloodPanel BloodPanel;
-   
+    public PauseMenuScript ps;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +38,11 @@ public class PlayerStat : CharactorStat
     public override void Die()
     {
         base.Die();
-        //Debug.Log("Player died");
-        //animation 
+
         // display lost game
-        // restrat or goto menu
+        
+        BloodPanel.Gameover();
+        ps.GameOver();
+        
     }
 }
