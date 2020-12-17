@@ -16,4 +16,9 @@ public class PlayerManger : MonoBehaviour
     #endregion
 
     public GameObject player;
+
+    public void GameOver()
+    {
+        Time.timeScale = 0.2f;
+    }
 }
