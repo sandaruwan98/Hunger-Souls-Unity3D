@@ -37,9 +37,11 @@ public class PauseMenuScript : MonoBehaviour
     {
         pausePanel.SetActive(true);
         gamePanel.SetActive(false);
+        //Invoke("stopTime",0.1f);
         Time.timeScale = 0f;
         GameIsPaused = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Resume()
@@ -60,6 +62,7 @@ public class PauseMenuScript : MonoBehaviour
     {
 
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 
     public void options()
@@ -73,4 +76,5 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(Scene.name);
         GameIsPaused = false;
     }
+    
 }

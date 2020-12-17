@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyStat : CharactorStat
 {
     Animator anim;
-    EnemyController con;
+    EnemyController enemycon;
     CapsuleCollider col;
     EnemySoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        con = GetComponent<EnemyController>();
-        col = GetComponent<CapsuleCollider>();
+        enemycon = GetComponent<EnemyController>();
+        //col = GetComponent<CapsuleCollider>();
         soundManager = GetComponent<EnemySoundManager>();
     }
 
@@ -38,7 +38,8 @@ public class EnemyStat : CharactorStat
         transform.DetachChildren();
         //play sound
         soundManager.PlayDieSound();
-        Destroy(transform.gameObject,3f);
+        Destroy(enemycon);
+        Destroy(transform.gameObject,2f);
        
     }
 }
