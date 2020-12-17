@@ -1,26 +1,45 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    bool isGameOver = false;
     public GameObject pausePanel;
+    public GameObject goPanel;
     public GameObject gamePanel;
     private Scene Scene;
-    
+    public GameObject player;
+    RigidbodyFirstPersonController fps;
     // Start is called before the first frame update
     void Start()
     {
         Scene = SceneManager.GetActiveScene();
+        fps = PlayerManger.instance.player.GetComponent<RigidbodyFirstPersonController>();
     }
+
+
+    public void GameOver()
+    {
+        fps.enabled = false;
+        Destroy(player);
+        isGameOver = true;
+        goPanel.SetActive(true);
+        gamePanel.SetActive(false);
+        
+        Time.timeScale = 0.05f;
+        GameIsPaused = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Invoke("stoptime", 0.15f);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isGameOver)
         {
             if (GameIsPaused)
             {
@@ -65,9 +84,9 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void options()
+    public void stoptime()
     {
-
+        Time.timeScale = 0f;
     }
 
     public void restart()

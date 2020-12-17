@@ -47,9 +47,22 @@ public class BloodPanel : MonoBehaviour
         isShowing = false;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public IEnumerator Gameover()
     {
+       
+        float start = canva.alpha;
+        float counter = 0f;
+        float finduration = duration * 0.5f;
+        
+        while (counter < finduration)
+        {
+            counter += Time.deltaTime;
+            canva.alpha = Mathf.Lerp(start, 1f, counter / finduration);
+            yield return null;
+        }
         
     }
+
+
 }
