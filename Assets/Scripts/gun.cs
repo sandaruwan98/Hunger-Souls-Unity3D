@@ -71,7 +71,13 @@ public class gun : MonoBehaviour
         if (reloadCooldown > 0)
         {
             reloadCooldown-=Time.deltaTime;
+            PlayerManger.instance.reloading = true;
         }
+        else
+        {
+            PlayerManger.instance.reloading = false;
+        }
+
         shootcheck = Input.GetButton("Fire1") && reloadCooldown <= 0f && (!run);
 
         if (shootcheck && Time.time >= nextTimetofireSound  && bullets > 0 && totalBullts > 0)// shoot sound
@@ -86,7 +92,7 @@ public class gun : MonoBehaviour
         {
             bullets--;
             nextTimetofire = Time.time + 1f/FireRate;
-            if(bullets > 0 && totalBullts>0)
+            if(bullets > 0 && totalBullts>0 )
             {
                 anim["fire"].speed = FireSpeed;
                 //anim.CrossFade("fire");
@@ -96,25 +102,17 @@ public class gun : MonoBehaviour
             }
             else
             {
-                reloadCooldown = reloadtime;
-                totalBullts -= (bcount - bullets);
-                if(totalBullts > bcount)
-                {
-                    bullets = bcount;
-                }
-                else
-                {
-                    bullets = totalBullts;
-                }
-                
-                anim.CrossFade("reload");
-                sounds[1].Play();
+                Reload();
             }
 
             DisplayBulletCount();
         }
-        
-        Reload();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
+
+
         runAnimation();
        
        // if (Input.GetButtonUp("Fire1"))
@@ -153,6 +151,7 @@ public class gun : MonoBehaviour
             //impactPLAY("ENEMY",Bloodimpact);           
            // impactPLAY("concrete", concreteimpact);
             impactPLAY("metal", metalimpact);
+            impactPLAY("glass", glassimpact);
           
             void impactPLAY(string tag, GameObject obj)
             {
@@ -226,8 +225,7 @@ public class gun : MonoBehaviour
 
     void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+        
             reloadCooldown = reloadtime;
             totalBullts -= (bcount - bullets);
             if (totalBullts > bcount)
@@ -241,7 +239,7 @@ public class gun : MonoBehaviour
             anim.CrossFade("reload");
             sounds[1].Play();
             DisplayBulletCount();
-        }
+       
        
     }
 

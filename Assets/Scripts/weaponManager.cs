@@ -16,8 +16,8 @@ public class weaponManager : MonoBehaviour
     void Update()
     {
         int previousselectedweapon = selectedweapon;
-
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        bool run = Input.GetButton("run");
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && !run)
         {
             if (selectedweapon >= transform.childCount - 1)
                 selectedweapon = 0;
@@ -25,7 +25,7 @@ public class weaponManager : MonoBehaviour
             selectedweapon++;
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f && !run)
         {
             if (selectedweapon <= 0)
 
@@ -33,8 +33,8 @@ public class weaponManager : MonoBehaviour
             else
                 selectedweapon--;
         }
-        bool run = Input.GetButton("run");
-        if (previousselectedweapon != selectedweapon && !run)
+        
+        if (previousselectedweapon != selectedweapon && !PlayerManger.instance.reloading)
             selectWeapon();
     }
 
