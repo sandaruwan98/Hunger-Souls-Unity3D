@@ -9,7 +9,7 @@ public class EnemySoundManager : MonoBehaviour
     public AudioClip[] moveClips;
     public AudioClip[] dieClips;
     AudioSource audioSource;
-
+    bool movesoundblock = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +24,10 @@ public class EnemySoundManager : MonoBehaviour
     }
     public void PlayMoveSound()
     {
-        if (!audioSource.isPlaying)
+
+        if (!audioSource.isPlaying && !movesoundblock)
         {
+            movesoundblock = true;
             int index = Random.Range(0, moveClips.Length);
             audioSource.clip = moveClips[index];
             audioSource.PlayOneShot(audioSource.clip);
