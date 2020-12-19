@@ -37,9 +37,10 @@ public class EnemyController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
+            PlayerManger.instance.isSeen = true;
             agent.SetDestination(target.position);
             //play sound 
-            //soundManager.PlayMoveSound();
+            soundManager.PlayMoveSound();
 
             anim.SetFloat("attack", attackcooldown);
             if (distance <= agent.stoppingDistance+0.1f)

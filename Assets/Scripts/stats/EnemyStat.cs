@@ -34,6 +34,7 @@ public class EnemyStat : CharactorStat
     {
         base.Die();
         //play die anim
+        PlayerManger.instance.isSeen = false;
         anim.SetInteger("die", Random.Range(1,3));
         transform.DetachChildren();
         //play sound

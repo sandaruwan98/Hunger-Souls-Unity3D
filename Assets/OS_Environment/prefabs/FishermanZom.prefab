@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2155072621072070829}
   - component: {fileID: 2155072621072070819}
   - component: {fileID: 218808972}
-  - component: {fileID: 218808973}
+  - component: {fileID: 4177066511413405235}
   m_Layer: 0
   m_Name: FishermanZom
   m_TagString: ENEMY
@@ -239,7 +239,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &218808973
+--- !u!114 &4177066511413405235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,17 +256,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3b93d05246ca75240ad84b44510b1377, type: 3}
   - {fileID: 8300000, guid: f5c3421b64d522b419574df6277ff39f, type: 3}
   moveClips:
-  - {fileID: 8300000, guid: aa38a598c1d79b040bdb951fd9d98cbb, type: 3}
-  - {fileID: 8300000, guid: a39c6db478250e14a9cad68fff05b1d0, type: 3}
-  - {fileID: 8300000, guid: d93aae3b995d1c24190f4fe19ed91eed, type: 3}
-  - {fileID: 8300000, guid: 512b743751119644e836ece2f841edb7, type: 3}
   - {fileID: 8300000, guid: bf752b004ce4f8648bd383e378a74b58, type: 3}
+  - {fileID: 8300000, guid: 512b743751119644e836ece2f841edb7, type: 3}
+  - {fileID: 8300000, guid: 1091d7a7a9c543047a8aaeb3b3b05623, type: 3}
+  - {fileID: 8300000, guid: d93aae3b995d1c24190f4fe19ed91eed, type: 3}
+  - {fileID: 8300000, guid: d97468dcdfb6ad8499e74d336cad6847, type: 3}
+  - {fileID: 8300000, guid: c8467bd22a79f4d4bbba1b3230dd0d93, type: 3}
+  - {fileID: 8300000, guid: 278daf18c47483247b3e68d7156fa214, type: 3}
+  - {fileID: 8300000, guid: fa8dd801c0b716648a93039ceae3da04, type: 3}
   dieClips:
-  - {fileID: 8300000, guid: 4d41d58cdfacaa2498ee5ab93e9c7c00, type: 3}
-  - {fileID: 8300000, guid: 8ad66d467e9539f45b3e81ca00cd2acc, type: 3}
   - {fileID: 8300000, guid: c966f917614fbd74a9a81b312f8cdeb4, type: 3}
-  - {fileID: 8300000, guid: ae1a9abbfa7a70b449d1006349a9dfa0, type: 3}
-  - {fileID: 8300000, guid: 6c43a2ee1deea93409b1b54e43e38d48, type: 3}
+  - {fileID: 8300000, guid: 2c44ff22eeb73404e8b35723b1c662de, type: 3}
+  - {fileID: 8300000, guid: 21cb9d3eb8721be40b396bdd48fa50a8, type: 3}
+  - {fileID: 8300000, guid: 5d901f7e51fab1844a4914fabc1ad82d, type: 3}
+  - {fileID: 8300000, guid: 8ad66d467e9539f45b3e81ca00cd2acc, type: 3}
 --- !u!1001 &8936962218353306624
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pausePanel;
     public GameObject goPanel;
     public GameObject gamePanel;
+    public GameObject info;
     private Scene Scene;
     public GameObject player;
     RigidbodyFirstPersonController fps;
@@ -17,9 +18,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         Scene = SceneManager.GetActiveScene();
         fps = PlayerManger.instance.player.GetComponent<RigidbodyFirstPersonController>();
+        Invoke("hideinfo",6f);
     }
 
 
+    void hideinfo()
+    {
+        info.SetActive(false);
+    }
     public void GameOver()
     {
         fps.enabled = false;
@@ -39,6 +45,7 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+ 
         if (Input.GetKeyDown(KeyCode.Escape) && !isGameOver)
         {
             if (GameIsPaused)
