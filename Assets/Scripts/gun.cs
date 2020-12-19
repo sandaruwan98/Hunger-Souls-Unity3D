@@ -57,6 +57,7 @@ public class gun : MonoBehaviour
     {
         bullets = bcount;
         reloadCooldown = 0f;
+        DisplayBulletCount();
     }
 
     private void OnDisable()
@@ -90,17 +91,18 @@ public class gun : MonoBehaviour
 
         if (shootcheck && Time.time >= nextTimetofire) //shoot-----------
         {
-            bullets--;
+            
             nextTimetofire = Time.time + 1f/FireRate;
-            if(bullets > 0 && totalBullts>0 )
+            if(bullets > 0 )
             {
+                bullets--;
                 anim["fire"].speed = FireSpeed;
                 //anim.CrossFade("fire");
                 anim.Play("fire");
                 MfPlay();
                 shoot();
             }
-            else
+            else if (totalBullts > 0)
             {
                 Reload();
             }
@@ -148,8 +150,7 @@ public class gun : MonoBehaviour
                // target.animator.SetBool("hit", true);
             }
             
-            //impactPLAY("ENEMY",Bloodimpact);           
-           // impactPLAY("concrete", concreteimpact);
+           
             impactPLAY("metal", metalimpact);
             impactPLAY("glass", glassimpact);
           
@@ -158,7 +159,7 @@ public class gun : MonoBehaviour
                 if (hit.transform.tag == tag)
                 {
                     GameObject imapact = Instantiate(obj, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(imapact,5f);
+                    Destroy(imapact,4f);
                 }
             }
         }
@@ -168,8 +169,7 @@ public class gun : MonoBehaviour
     {
         tmBullet.text = bullets.ToString();
         tmTotalBullet.text = totalBullts.ToString();
-       // tmBullet.SetText(bullets.ToString());
-       // tmTotalBullet.SetText(totalBullts.ToString());
+       
 
     }
 
@@ -225,20 +225,34 @@ public class gun : MonoBehaviour
 
     void Reload()
     {
-        
-            reloadCooldown = reloadtime;
+
+        if (totalBullts <= 0)
+            return;
+        reloadCooldown = reloadtime;
+
+
+
+
+        if (totalBullts <= bcount)
+        {
+            bullets = totalBullts;
+            totalBullts = 0;
+        }
+        else
+        {
+
+
+
             totalBullts -= (bcount - bullets);
-            if (totalBullts > bcount)
-            {
+            
+            
                 bullets = bcount;
-            }
-            else
-            {
-                bullets = totalBullts;
-            }
-            anim.CrossFade("reload");
-            sounds[1].Play();
-            DisplayBulletCount();
+            
+            
+        }
+        anim.CrossFade("reload");
+        sounds[1].Play();
+        DisplayBulletCount();
        
        
     }

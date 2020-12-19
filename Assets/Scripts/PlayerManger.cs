@@ -17,6 +17,10 @@ public class PlayerManger : MonoBehaviour
 
     public GameObject player;
     public bool reloading = false;
+    private bool seen = false;
+
+    public bool isSeen { get => seen; set => seen = value; }
+
     public void GameOver()
     {
         Time.timeScale = 0.2f;
