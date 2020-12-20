@@ -27,6 +27,7 @@ public class BgSound : MonoBehaviour
         else
         {
             audioSource.Pause();
+            
         }
     }
 }
