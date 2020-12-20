@@ -21,12 +21,13 @@ public class BgSound : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayDelayed(0.5f);
+                audioSource.PlayDelayed(1f);
             }
         }
         else
         {
             audioSource.Pause();
+            
         }
     }
 }

@@ -21,6 +21,14 @@ public class PlayerManger : MonoBehaviour
 
     public bool isSeen { get => seen; set => seen = value; }
 
+    public void falseSeen()
+    {
+        Invoke("setss", 5f);
+    }
+    void setss()
+    {
+        seen = false;
+    }
     public void GameOver()
     {
         Time.timeScale = 0.2f;
