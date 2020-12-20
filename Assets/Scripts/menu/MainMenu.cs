@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,8 +13,34 @@ public class MainMenu : MonoBehaviour
     public GameObject LoadingPanel;
     public AudioMixer audioMixer;
     public Slider slider;
-    
 
+
+    Resolution[] resolutions;
+    public TMP_Dropdown resdropdown;
+
+
+    private void Start()
+    {
+        resolutions = Screen.resolutions;
+        resdropdown.ClearOptions();
+        List<string> options = new List<string>();
+
+        int currnet_res_index=0;
+        for(int i=0; i < resolutions.Length; i++)
+        {
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currnet_res_index = i;
+            }
+            string option = resolutions[i].width +" x " +resolutions[i].height;
+            options.Add(option);
+        }
+
+
+        resdropdown.AddOptions(options);
+        resdropdown.value = currnet_res_index;
+        resdropdown.RefreshShownValue();
+    }
     //for main panel
     public void StartGame()
     {
@@ -51,14 +78,29 @@ public class MainMenu : MonoBehaviour
 
 
     //for options
+
+
+
     public void IsFullScreen(bool isFull)
     {
         Screen.fullScreen = isFull;
     }
 
+    public void SetQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
+    }
+
+
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetResolution(int index)
+    {
+        Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
+
     }
 
     public void Back()
