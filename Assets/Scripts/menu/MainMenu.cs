@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject MainPanel;
     public GameObject OptionsPanel;
+    public GameObject levelsPanel;
     public GameObject LoadingPanel;
     public AudioMixer audioMixer;
     public Slider slider;
@@ -42,18 +43,18 @@ public class MainMenu : MonoBehaviour
         resdropdown.RefreshShownValue();
     }
     //for main panel
-    public void StartGame()
+    public void StartGame(int index)
     {
         Time.timeScale = 1f;
-        StartCoroutine(Loadscene());
+        StartCoroutine(Loadscene(index));
     }
 
 
-    IEnumerator Loadscene()
+    IEnumerator Loadscene(int index)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         LoadingPanel.SetActive(true);
-        MainPanel.SetActive(false);
+        levelsPanel.SetActive(false);
 
         while (!operation.isDone)
         {
@@ -61,6 +62,14 @@ public class MainMenu : MonoBehaviour
             slider.value = progres;
             yield return null;
         }
+    }
+
+    
+
+    public void ShowLevels()
+    {
+        levelsPanel.SetActive(true);
+        MainPanel.SetActive(false);
     }
 
 
@@ -106,6 +115,7 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         OptionsPanel.SetActive(false);
+        levelsPanel.SetActive(false);
         MainPanel.SetActive(true);
     }
     
