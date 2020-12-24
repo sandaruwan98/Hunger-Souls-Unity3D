@@ -74,4 +74,11 @@ public class EnemyController : MonoBehaviour
         Quaternion lookrotation = Quaternion.LookRotation( new Vector3( direction.x, 0, direction.z) );
         transform.rotation =  Quaternion.Slerp(transform.rotation , lookrotation,Time.deltaTime*5f);
     }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
 }
