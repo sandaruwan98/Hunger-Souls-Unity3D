@@ -143,6 +143,7 @@ MonoBehaviour:
   currenthealth: 0
   damage:
     basevalue: 10
+  recovertime: 1.7
 --- !u!82 &218808972
 AudioSource:
   m_ObjectHideFlags: 0
