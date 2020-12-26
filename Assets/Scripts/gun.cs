@@ -142,7 +142,10 @@ public class gun : MonoBehaviour
                 }
                 else
                 {
+                   
                     zombie.TakeDamage(bulletdamage);
+                    //if(Random.Range(0f, 1f) > 0.6f)
+                    //    BloodEffect.BloodImpact(hit);
                 }
 
                 BloodEffect.BloodImpact(hit);
@@ -150,8 +153,8 @@ public class gun : MonoBehaviour
             }
             
            
-            impactPLAY("metal", metalimpact);
-            impactPLAY("glass", glassimpact);
+           impactPLAY("metal", metalimpact);
+            //impactPLAY("glass", glassimpact);
           
             void impactPLAY(string tag, GameObject obj)
             {
