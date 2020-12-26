@@ -164,7 +164,7 @@ public class gun : MonoBehaviour
         }
     } 
    
-    void DisplayBulletCount()
+    public void DisplayBulletCount()
     {
         tmBullet.text = bullets.ToString();
         tmTotalBullet.text = totalBullts.ToString();
@@ -198,19 +198,7 @@ public class gun : MonoBehaviour
             animator.SetBool("walk", false);
         }
     }
-
-    void StabEnemyCheck()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-           
-            animstab.SetBool("stab", true);
-        }
-        else
-        {
-            animstab.SetBool("stab", false);
-        }
-    }
+    
     
     void MfPlay()
     {
