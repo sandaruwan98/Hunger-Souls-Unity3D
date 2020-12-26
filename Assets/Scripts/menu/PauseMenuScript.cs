@@ -12,12 +12,12 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject info;
     private Scene Scene;
     public GameObject player;
-    RigidbodyFirstPersonController fps;
+   // RigidbodyFirstPersonController fps;
     // Start is called before the first frame update
     void Start()
     {
         Scene = SceneManager.GetActiveScene();
-        fps = PlayerManger.instance.player.GetComponent<RigidbodyFirstPersonController>();
+      //  fps = PlayerManger.instance.player.GetComponent<RigidbodyFirstPersonController>();
         Invoke("hideinfo",6f);
     }
 
@@ -28,7 +28,7 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void GameOver()
     {
-        fps.enabled = false;
+        //fps.enabled = false;
         Destroy(player);
         isGameOver = true;
         goPanel.SetActive(true);
