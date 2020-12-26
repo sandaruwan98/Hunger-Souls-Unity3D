@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
             //play sound 
             soundManager.PlayMoveSound();
 
-            anim.SetFloat("attack", attackcooldown);
+            //anim.SetFloat("attack", attackcooldown);
             if (distance <= agent.stoppingDistance+0.1f)
             {
 
@@ -64,6 +64,7 @@ public class EnemyController : MonoBehaviour
 
     private void attack()
     {
+        anim.SetTrigger("attack");
         playerStat.TakeDamage(myStat.damage.GetValue());
         soundManager.PlayAttackSound();
     }
