@@ -15,7 +15,6 @@ public class gun : MonoBehaviour
 
     public Camera fpscam;
     public Animator animator;
-    public Animator animstab;
     public ParticleSystem mf;
     public ParticleSystem flame;
     public ParticleSystem pt;
@@ -81,7 +80,7 @@ public class gun : MonoBehaviour
 
         shootcheck = Input.GetButton("Fire1") && reloadCooldown <= 0f && (!run);
 
-        if (shootcheck && Time.time >= nextTimetofireSound  && bullets > 0 && totalBullts > 0)// shoot sound
+        if (shootcheck && Time.time >= nextTimetofireSound  && bullets > 0 && totalBullts >= 0)// shoot sound
         {
             nextTimetofireSound = Time.time + 1f / FireSound;
             sounds[0].Play();
