@@ -10,7 +10,10 @@ public class WinMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    public void PlayAgain(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
     public void Quit()
     {
         Application.Quit();
