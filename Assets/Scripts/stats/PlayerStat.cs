@@ -23,6 +23,14 @@ public class PlayerStat : CharactorStat
         
     }
 
+    public void getMediPack(int value)
+    {
+        currenthealth += value;
+        if (currenthealth > maxhealth)
+            currenthealth = maxhealth;
+        healthbar.SetHealth(currenthealth);
+    }
+
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
