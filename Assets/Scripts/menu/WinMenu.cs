@@ -12,6 +12,7 @@ public class WinMenu : MonoBehaviour
     }
     public void PlayAgain(int level)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(level);
     }
     public void Quit()
